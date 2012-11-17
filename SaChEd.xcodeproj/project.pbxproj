@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6EB905C41657C4B300F34944 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB905C31657C4B300F34944 /* Cocoa.framework */; };
+		6EB905CE1657C4B300F34944 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EB905CC1657C4B300F34944 /* InfoPlist.strings */; };
+		6EB905D01657C4B300F34944 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB905CF1657C4B300F34944 /* main.m */; };
+		6EB905D41657C4B300F34944 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6EB905D21657C4B300F34944 /* Credits.rtf */; };
+		6EB905D71657C4B300F34944 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB905D61657C4B300F34944 /* AppDelegate.m */; };
+		6EB905DA1657C4B400F34944 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB905D81657C4B400F34944 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6EB905BF1657C4B300F34944 /* SaChEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaChEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EB905C31657C4B300F34944 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6EB905C61657C4B300F34944 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6EB905C71657C4B300F34944 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6EB905C81657C4B300F34944 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6EB905CB1657C4B300F34944 /* SaChEd-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaChEd-Info.plist"; sourceTree = "<group>"; };
+		6EB905CD1657C4B300F34944 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6EB905CF1657C4B300F34944 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6EB905D11657C4B300F34944 /* SaChEd-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaChEd-Prefix.pch"; sourceTree = "<group>"; };
+		6EB905D31657C4B300F34944 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		6EB905D51657C4B300F34944 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6EB905D61657C4B300F34944 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6EB905D91657C4B400F34944 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6EB905BC1657C4B300F34944 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EB905C41657C4B300F34944 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EB905B41657C4B300F34944 = {
+			isa = PBXGroup;
+			children = (
+				6EB905C91657C4B300F34944 /* SaChEd */,
+				6EB905C21657C4B300F34944 /* Frameworks */,
+				6EB905C01657C4B300F34944 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6EB905C01657C4B300F34944 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EB905BF1657C4B300F34944 /* SaChEd.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6EB905C21657C4B300F34944 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EB905C31657C4B300F34944 /* Cocoa.framework */,
+				6EB905C51657C4B300F34944 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6EB905C51657C4B300F34944 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EB905C61657C4B300F34944 /* AppKit.framework */,
+				6EB905C71657C4B300F34944 /* CoreData.framework */,
+				6EB905C81657C4B300F34944 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6EB905C91657C4B300F34944 /* SaChEd */ = {
+			isa = PBXGroup;
+			children = (
+				6EB905D51657C4B300F34944 /* AppDelegate.h */,
+				6EB905D61657C4B300F34944 /* AppDelegate.m */,
+				6EB905D81657C4B400F34944 /* MainMenu.xib */,
+				6EB905CA1657C4B300F34944 /* Supporting Files */,
+			);
+			path = SaChEd;
+			sourceTree = "<group>";
+		};
+		6EB905CA1657C4B300F34944 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6EB905CB1657C4B300F34944 /* SaChEd-Info.plist */,
+				6EB905CC1657C4B300F34944 /* InfoPlist.strings */,
+				6EB905CF1657C4B300F34944 /* main.m */,
+				6EB905D11657C4B300F34944 /* SaChEd-Prefix.pch */,
+				6EB905D21657C4B300F34944 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6EB905BE1657C4B300F34944 /* SaChEd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EB905DD1657C4B400F34944 /* Build configuration list for PBXNativeTarget "SaChEd" */;
+			buildPhases = (
+				6EB905BB1657C4B300F34944 /* Sources */,
+				6EB905BC1657C4B300F34944 /* Frameworks */,
+				6EB905BD1657C4B300F34944 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaChEd;
+			productName = SaChEd;
+			productReference = 6EB905BF1657C4B300F34944 /* SaChEd.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6EB905B61657C4B300F34944 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Crazor;
+			};
+			buildConfigurationList = 6EB905B91657C4B300F34944 /* Build configuration list for PBXProject "SaChEd" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6EB905B41657C4B300F34944;
+			productRefGroup = 6EB905C01657C4B300F34944 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6EB905BE1657C4B300F34944 /* SaChEd */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6EB905BD1657C4B300F34944 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EB905CE1657C4B300F34944 /* InfoPlist.strings in Resources */,
+				6EB905D41657C4B300F34944 /* Credits.rtf in Resources */,
+				6EB905DA1657C4B400F34944 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6EB905BB1657C4B300F34944 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EB905D01657C4B300F34944 /* main.m in Sources */,
+				6EB905D71657C4B300F34944 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6EB905CC1657C4B300F34944 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EB905CD1657C4B300F34944 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6EB905D21657C4B300F34944 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EB905D31657C4B300F34944 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		6EB905D81657C4B400F34944 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EB905D91657C4B400F34944 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6EB905DB1657C4B400F34944 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6EB905DC1657C4B400F34944 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6EB905DE1657C4B400F34944 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaChEd/SaChEd-Prefix.pch";
+				INFOPLIST_FILE = "SaChEd/SaChEd-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6EB905DF1657C4B400F34944 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaChEd/SaChEd-Prefix.pch";
+				INFOPLIST_FILE = "SaChEd/SaChEd-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6EB905B91657C4B300F34944 /* Build configuration list for PBXProject "SaChEd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EB905DB1657C4B400F34944 /* Debug */,
+				6EB905DC1657C4B400F34944 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EB905DD1657C4B400F34944 /* Build configuration list for PBXNativeTarget "SaChEd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EB905DE1657C4B400F34944 /* Debug */,
+				6EB905DF1657C4B400F34944 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6EB905B61657C4B300F34944 /* Project object */;
+}
