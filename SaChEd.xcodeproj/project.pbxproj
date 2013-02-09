@@ -13,6 +13,11 @@
 		6EB905D41657C4B300F34944 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6EB905D21657C4B300F34944 /* Credits.rtf */; };
 		6EB905D71657C4B300F34944 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB905D61657C4B300F34944 /* AppDelegate.m */; };
 		6EB905DA1657C4B400F34944 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB905D81657C4B400F34944 /* MainMenu.xib */; };
+		6EB905E51657D68900F34944 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB905E41657D68900F34944 /* Channel.m */; };
+		6EB905E81657D76500F34944 /* ChannelListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB905E71657D76500F34944 /* ChannelListController.m */; };
+		6EB905EC165807BC00F34944 /* green-heart-icon-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB905EB165807BC00F34944 /* green-heart-icon-hi.png */; };
+		6ED0DCD816580AA300457E1D /* locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0DCD616580AA300457E1D /* locked.png */; };
+		6ED0DCD916580AA300457E1D /* unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0DCD716580AA300457E1D /* unlocked.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,13 @@
 		6EB905D51657C4B300F34944 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6EB905D61657C4B300F34944 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6EB905D91657C4B400F34944 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6EB905E31657D68900F34944 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		6EB905E41657D68900F34944 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
+		6EB905E61657D76500F34944 /* ChannelListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelListController.h; sourceTree = "<group>"; };
+		6EB905E71657D76500F34944 /* ChannelListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelListController.m; sourceTree = "<group>"; };
+		6EB905EB165807BC00F34944 /* green-heart-icon-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-heart-icon-hi.png"; sourceTree = "<group>"; };
+		6ED0DCD616580AA300457E1D /* locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locked.png; sourceTree = "<group>"; };
+		6ED0DCD716580AA300457E1D /* unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlocked.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,10 @@
 				6EB905D51657C4B300F34944 /* AppDelegate.h */,
 				6EB905D61657C4B300F34944 /* AppDelegate.m */,
 				6EB905D81657C4B400F34944 /* MainMenu.xib */,
+				6EB905E61657D76500F34944 /* ChannelListController.h */,
+				6EB905E71657D76500F34944 /* ChannelListController.m */,
+				6EB905E31657D68900F34944 /* Channel.h */,
+				6EB905E41657D68900F34944 /* Channel.m */,
 				6EB905CA1657C4B300F34944 /* Supporting Files */,
 			);
 			path = SaChEd;
@@ -93,11 +109,14 @@
 		6EB905CA1657C4B300F34944 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6EB905EB165807BC00F34944 /* green-heart-icon-hi.png */,
 				6EB905CB1657C4B300F34944 /* SaChEd-Info.plist */,
 				6EB905CC1657C4B300F34944 /* InfoPlist.strings */,
 				6EB905CF1657C4B300F34944 /* main.m */,
 				6EB905D11657C4B300F34944 /* SaChEd-Prefix.pch */,
 				6EB905D21657C4B300F34944 /* Credits.rtf */,
+				6ED0DCD616580AA300457E1D /* locked.png */,
+				6ED0DCD716580AA300457E1D /* unlocked.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -156,6 +175,9 @@
 				6EB905CE1657C4B300F34944 /* InfoPlist.strings in Resources */,
 				6EB905D41657C4B300F34944 /* Credits.rtf in Resources */,
 				6EB905DA1657C4B400F34944 /* MainMenu.xib in Resources */,
+				6EB905EC165807BC00F34944 /* green-heart-icon-hi.png in Resources */,
+				6ED0DCD816580AA300457E1D /* locked.png in Resources */,
+				6ED0DCD916580AA300457E1D /* unlocked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +190,8 @@
 			files = (
 				6EB905D01657C4B300F34944 /* main.m in Sources */,
 				6EB905D71657C4B300F34944 /* AppDelegate.m in Sources */,
+				6EB905E51657D68900F34944 /* Channel.m in Sources */,
+				6EB905E81657D76500F34944 /* ChannelListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +321,7 @@
 				6EB905DF1657C4B400F34944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

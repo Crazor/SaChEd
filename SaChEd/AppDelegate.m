@@ -12,7 +12,22 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    [_channelListController openFile:self];
+}
+
+- (BOOL)windowShouldClose:(id)sender
+{
+    if ([_window isDocumentEdited])
+    {
+        return NO;
+    }
+
+    return YES;
+}
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+    [NSApp terminate:self];
 }
 
 @end
