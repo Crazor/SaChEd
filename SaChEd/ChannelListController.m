@@ -166,17 +166,16 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 - (void)readMapCableDData:(NSData *)mapData
 {
     const unsigned char *bytes = [mapData bytes];
-
-    NSString *format;
+    
     int skip;
     if (mapData.length == 1000*248)
     {
-        format = @"old";
+        _format = @"old";
         skip = 248;
     }
     else if (mapData.length == 1000*320)
     {
-        format = @"new";
+        _format = @"new";
         skip = 320;
     }
     
@@ -187,7 +186,7 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
             continue;
         }
         
-        Channel *c = [[Channel alloc] initWithData:[NSData dataWithBytes:&bytes[i] length:skip] format:format];
+        Channel *c = [[Channel alloc] initWithData:[NSData dataWithBytes:&bytes[i] length:skip] format:_format];
         [channels addObject:c];
         
         if (c.favorite1)
@@ -208,16 +207,24 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 
 - (void)writeMapCableD:(NSURL *)file
 {
-    unsigned char *zeroes[248000];
+    unsigned char *zeroes[320000];
 
     NSMutableData *mapData = [NSMutableData data];
 
     for (Channel *c in channels)
     {
+        [c updateChecksum];
         [mapData appendData:[c rawData]];
     }
 
-    [mapData appendBytes:zeroes length:248000 - mapData.length];
+    if ([_format isEqualToString:@"old"])
+    {
+        [mapData appendBytes:zeroes length:248 * 1000 - mapData.length];
+    }
+    else if ([_format isEqualToString:@"new"])
+    {
+        [mapData appendBytes:zeroes length:320 * 1000 - mapData.length];
+    }
 
     [mapData writeToURL:file atomically:NO];
 }

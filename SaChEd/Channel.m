@@ -56,8 +56,6 @@ NSDictionary *formats;
         char *bytes = _rawData.mutableBytes;
         bytes[[_offsets[@"name"] intValue] + i] = 0;
     }
-
-    [self updateChecksum];
 }
 
 - (int)number
@@ -72,8 +70,6 @@ NSDictionary *formats;
 
     bytes[0] = number        & 0xFF;
     bytes[1] = (number >> 8) & 0xFF;
-
-    [self updateChecksum];
 }
 
 - (BOOL)favorite1
@@ -112,8 +108,6 @@ NSDictionary *formats;
     {
         bytes[[_offsets[@"favorite"] intValue]] &= ~1;
     }
-
-    [self updateChecksum];
 }
 
 - (void)setFavorite2:(BOOL)favorite
@@ -130,8 +124,6 @@ NSDictionary *formats;
         {
             bytes[[_offsets[@"favorite"] intValue]] &= ~2;
         }
-        
-        [self updateChecksum];
     }
 }
 
@@ -149,8 +141,6 @@ NSDictionary *formats;
         {
             bytes[[_offsets[@"favorite"] intValue]] &= ~4;
         }
-        
-        [self updateChecksum];
     }
 }
 
@@ -168,8 +158,6 @@ NSDictionary *formats;
         {
             bytes[[_offsets[@"favorite"] intValue]] &= ~8;
         }
-        
-        [self updateChecksum];
     }
 }
 

@@ -16,6 +16,7 @@
     IBOutlet NSWindow *window;
 }
 
+@property NSString *format;
 @property int favoriteCount;
 
 - (IBAction)openFile:(id)sender;
