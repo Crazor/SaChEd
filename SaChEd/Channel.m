@@ -10,10 +10,27 @@
 
 @implementation Channel
 
-- (id)initWithData:(NSData *)data
+NSDictionary *formats;
+
++(void)initialize
+{
+    formats = @{
+        @"old": @{
+            @"name": @45,
+            @"service": @9
+        },
+        @"new": @{
+            @"name": @65,
+            @"service": @15
+        }
+    };
+}
+
+- (id)initWithData:(NSData *)data format:(NSString *)format
 {
     if (self = [super init])
     {
+        _offsets = formats[format];
         _rawData = [data mutableCopy];
     }
 
@@ -23,18 +40,18 @@
 - (NSString *)name
 {
     unsigned const char *bytes = _rawData.bytes;
-    return [[NSString alloc] initWithBytes:&bytes[45] length:100 encoding:NSUTF16LittleEndianStringEncoding];
+    return [[NSString alloc] initWithBytes:&bytes[[_offsets[@"name"] intValue]] length:100 encoding:NSUTF16LittleEndianStringEncoding];
 }
 
 - (void)setName:(NSString *)name
 {
-    [name getBytes:&(_rawData.mutableBytes[45]) maxLength:100 usedLength:NULL encoding:NSUTF16LittleEndianStringEncoding options:NSStringEncodingConversionAllowLossy range:NSMakeRange(0, [name length]) remainingRange:NULL];
+    [name getBytes:&(_rawData.mutableBytes[[_offsets[@"name"] intValue]]) maxLength:100 usedLength:NULL encoding:NSUTF16LittleEndianStringEncoding options:NSStringEncodingConversionAllowLossy range:NSMakeRange(0, [name length]) remainingRange:NULL];
 
     // Fill the remaining bytes with 0x00
     for (NSUInteger i = [name length] * 2; i < 100; i++)
     {                              // ^ UTF-16!
         char *bytes = _rawData.mutableBytes;
-        bytes[45 + i] = 0;
+        bytes[[_offsets[@"name"] intValue] + i] = 0;
     }
 
     [self updateChecksum];
@@ -81,7 +98,7 @@
 - (NSString *)servicetype
 {
     unsigned const char *bytes = _rawData.bytes;
-    switch (bytes[9])
+    switch (bytes[[_offsets[@"service"] intValue]])
     {
         case 1:
             return @"SD";
@@ -90,7 +107,7 @@
         case 25:
             return @"HD";
         default:
-            return [NSString stringWithFormat:@"%d", bytes[9]];
+            return [NSString stringWithFormat:@"%d", bytes[[_offsets[@"service"] intValue]]];
     }
 }
 

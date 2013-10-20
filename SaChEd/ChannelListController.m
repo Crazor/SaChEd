@@ -164,15 +164,28 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 - (void)readMapCableDData:(NSData *)mapData
 {
     const unsigned char *bytes = [mapData bytes];
+
+    NSString *format;
+    int skip;
+    if (mapData.length == 1000*248)
+    {
+        format = @"old";
+        skip = 248;
+    }
+    else if (mapData.length == 1000*320)
+    {
+        format = @"new";
+        skip = 320;
+    }
     
-    for (int i = 0; i < [mapData length]; i+=248)
+    for (int i = 0; i < [mapData length]; i+=skip)
     {
         if (bytes[i] == 0 && bytes[i+1] == 0)
         {
             continue;
         }
         
-        Channel *c = [[Channel alloc] initWithData:[NSData dataWithBytes:&bytes[i] length:248]];
+        Channel *c = [[Channel alloc] initWithData:[NSData dataWithBytes:&bytes[i] length:skip] format:format];
         [channels addObject:c];
         
         if (c.favorite)

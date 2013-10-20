@@ -10,6 +10,7 @@
 
 @interface Channel : NSObject
 
+@property NSDictionary *offsets;
 @property NSMutableData *rawData;
 @property NSString *name;
 @property int number;
@@ -19,7 +20,7 @@
 @property (readonly) int parentallock;
 @property (readonly) int checksum;
 
-- (id)initWithData:(NSData *)data;
+- (id)initWithData:(NSData *)data format:(NSString *)format;
 - (void)updateChecksum;
 
 @end
