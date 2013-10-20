@@ -1,0 +1,3 @@
+[submodule "Objective-Zip"]
+	path = Objective-Zip
+	url = https://github.com/aburgh/Objective-Zip.git

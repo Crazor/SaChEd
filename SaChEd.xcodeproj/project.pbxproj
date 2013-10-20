@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E4A51F918144FAC00AA1F5F /* Objective-Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4A51EE18144F4400AA1F5F /* Objective-Zip.framework */; };
+		6E4A51FB18144FD800AA1F5F /* Objective-Zip.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E4A51EE18144F4400AA1F5F /* Objective-Zip.framework */; };
 		6EB905C41657C4B300F34944 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB905C31657C4B300F34944 /* Cocoa.framework */; };
 		6EB905CE1657C4B300F34944 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EB905CC1657C4B300F34944 /* InfoPlist.strings */; };
 		6EB905D01657C4B300F34944 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB905CF1657C4B300F34944 /* main.m */; };
@@ -20,7 +22,73 @@
 		6ED0DCD916580AA300457E1D /* unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0DCD716580AA300457E1D /* unlocked.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6E4A51E918144F4400AA1F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96D49C2414CEE20E00C927AA;
+			remoteInfo = "Objective-Zip ARM";
+		};
+		6E4A51EB18144F4400AA1F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96D49C9014CF160000C927AA;
+			remoteInfo = "Objective-Zip Intel";
+		};
+		6E4A51ED18144F4400AA1F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96D49C9614CF16B100C927AA;
+			remoteInfo = "Objective-Zip";
+		};
+		6E4A51EF18144F4400AA1F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = "Objective-Zip Test";
+		};
+		6E4A51F118144F4400AA1F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A68BDB164E6F9B00C0E535;
+			remoteInfo = ZipFileUnitTest;
+		};
+		6E4A51F318144F4400AA1F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A68BFD1651488200C0E535;
+			remoteInfo = "objective-zip_test";
+		};
+		6E4A51F518144F4400AA1F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 968F701416BC780400F60C24;
+			remoteInfo = ozip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E4A51FA18144FD200AA1F5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6E4A51FB18144FD800AA1F5F /* Objective-Zip.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Objective-Zip.xcodeproj"; path = "Objective-Zip/Objective-Zip.xcodeproj"; sourceTree = "<group>"; };
 		6EB905BF1657C4B300F34944 /* SaChEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaChEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB905C31657C4B300F34944 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6EB905C61657C4B300F34944 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -49,15 +117,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EB905C41657C4B300F34944 /* Cocoa.framework in Frameworks */,
+				6E4A51F918144FAC00AA1F5F /* Objective-Zip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E4A51E018144F4300AA1F5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E4A51EA18144F4400AA1F5F /* libObjective-Zip.a */,
+				6E4A51EC18144F4400AA1F5F /* libObjective-Zip.a */,
+				6E4A51EE18144F4400AA1F5F /* Objective-Zip.framework */,
+				6E4A51F018144F4400AA1F5F /* Objective-Zip Test.app */,
+				6E4A51F218144F4400AA1F5F /* ZipFileUnitTest.octest */,
+				6E4A51F418144F4400AA1F5F /* objective-zip_test */,
+				6E4A51F618144F4400AA1F5F /* ozip */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6EB905B41657C4B300F34944 = {
 			isa = PBXGroup;
 			children = (
+				6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */,
 				6EB905C91657C4B300F34944 /* SaChEd */,
 				6EB905C21657C4B300F34944 /* Frameworks */,
 				6EB905C01657C4B300F34944 /* Products */,
@@ -131,6 +215,7 @@
 				6EB905BB1657C4B300F34944 /* Sources */,
 				6EB905BC1657C4B300F34944 /* Frameworks */,
 				6EB905BD1657C4B300F34944 /* Resources */,
+				6E4A51FA18144FD200AA1F5F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -160,12 +245,70 @@
 			mainGroup = 6EB905B41657C4B300F34944;
 			productRefGroup = 6EB905C01657C4B300F34944 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6E4A51E018144F4300AA1F5F /* Products */;
+					ProjectRef = 6E4A51DF18144F4300AA1F5F /* Objective-Zip.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6EB905BE1657C4B300F34944 /* SaChEd */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6E4A51EA18144F4400AA1F5F /* libObjective-Zip.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjective-Zip.a";
+			remoteRef = 6E4A51E918144F4400AA1F5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E4A51EC18144F4400AA1F5F /* libObjective-Zip.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjective-Zip.a";
+			remoteRef = 6E4A51EB18144F4400AA1F5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E4A51EE18144F4400AA1F5F /* Objective-Zip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "Objective-Zip.framework";
+			remoteRef = 6E4A51ED18144F4400AA1F5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E4A51F018144F4400AA1F5F /* Objective-Zip Test.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Objective-Zip Test.app";
+			remoteRef = 6E4A51EF18144F4400AA1F5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E4A51F218144F4400AA1F5F /* ZipFileUnitTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZipFileUnitTest.octest;
+			remoteRef = 6E4A51F118144F4400AA1F5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E4A51F418144F4400AA1F5F /* objective-zip_test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "objective-zip_test";
+			remoteRef = 6E4A51F318144F4400AA1F5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E4A51F618144F4400AA1F5F /* ozip */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ozip;
+			remoteRef = 6E4A51F518144F4400AA1F5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6EB905BD1657C4B300F34944 /* Resources */ = {
