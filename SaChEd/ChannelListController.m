@@ -8,6 +8,7 @@
 
 #import "ChannelListController.h"
 #import "Channel.h"
+#import <Objective-Zip/Objective-Zip.h>
 
 @implementation ChannelListController
 
@@ -64,6 +65,10 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
             if ([[fileName lastPathComponent] isEqualToString:@"map-CableD"])
             {
                 [self readMapCableD:fileName];
+            }
+            else if ([[fileName pathExtension] isEqualToString:@"scm"])
+            {
+                [self readSCM:fileName];
             }
             else
             {
@@ -132,24 +137,44 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
     [window setDocumentEdited:YES];
 }
 
+#pragma mark - SCM handling
+- (void)readSCM:(NSURL *)file
+{
+    ZipFile *scmZip = [ZipFile zipFileWithURL:file mode:ZipFileModeUnzip error:nil];
+    if ([scmZip locateFileInZip:@"map-CableD" error:nil])
+    {
+        ZipReadStream *mapCableDStream = [scmZip readCurrentFileInZip:nil];
+        NSData *mapCableDData = [mapCableDStream readDataOfLength:[scmZip getCurrentFileInZipInfo:nil].length error:nil];
+        [self readMapCableDData:mapCableDData];
+    }
+    else
+    {
+        [self openFile:self];
+    }
+}
+
 #pragma mark mapCableD r/w
 
 - (void)readMapCableD:(NSURL *)file
 {
     NSData *mapData = [NSData dataWithContentsOfURL:file];
-
+    [self readMapCableDData:mapData];
+}
+    
+- (void)readMapCableDData:(NSData *)mapData
+{
     const unsigned char *bytes = [mapData bytes];
-
+    
     for (int i = 0; i < [mapData length]; i+=248)
     {
         if (bytes[i] == 0 && bytes[i+1] == 0)
         {
             continue;
         }
-
+        
         Channel *c = [[Channel alloc] initWithData:[NSData dataWithBytes:&bytes[i] length:248]];
         [channels addObject:c];
-
+        
         if (c.favorite)
         {
             _favoriteCount++;
@@ -160,10 +185,11 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
     //[channelsTableView setSortDescriptors:[NSArray arrayWithObjects:
     //                                  [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES selector:@selector(compare:)],
     //                                  nil]];
-
+    
     [self updateFavoriteCheckbox];
     //[channelsTableView sizeToFit];
 }
+
 
 - (void)writeMapCableD:(NSURL *)file
 {
@@ -181,7 +207,7 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
     [mapData writeToURL:file atomically:NO];
 }
 
-#pragma mark tableView datasource/delegate methods
+#pragma mark - tableView datasource/delegate methods
 
 - (void)tableView:(NSTableView *)tableView sortDescriptorsDidChange:(NSArray *)oldDescriptors
 {
