@@ -91,6 +91,7 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
     }
 }
 
+/*
 - (IBAction)checkAll:(id)sender
 {
     if ([sender intValue] == NSOffState)
@@ -114,6 +115,7 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
     [channelsTableView reloadData];
     [window setDocumentEdited:YES];
 }
+*/
 
 - (IBAction)renumber:(id)sender
 {
@@ -188,7 +190,7 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
         Channel *c = [[Channel alloc] initWithData:[NSData dataWithBytes:&bytes[i] length:skip] format:format];
         [channels addObject:c];
         
-        if (c.favorite)
+        if (c.favorite1)
         {
             _favoriteCount++;
         }
@@ -237,9 +239,48 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     Channel *channel = channels[row];
-    if ([[tableColumn identifier] isEqualToString:@"favorite"])
+    if ([[tableColumn identifier] isEqualToString:@"favorite1"])
     {
-        if (channel.favorite)
+        if (channel.favorite1)
+        {
+            //return [NSImage imageNamed:@"green-heart-icon-hi.png"];
+            return [NSNumber numberWithInt:NSOnState];
+        }
+        else
+        {
+            return [NSNumber numberWithInt:NSOffState];
+            //return [[NSImage alloc] init];
+        }
+    }
+    else if ([[tableColumn identifier] isEqualToString:@"favorite2"])
+    {
+        if (channel.favorite2)
+        {
+            //return [NSImage imageNamed:@"green-heart-icon-hi.png"];
+            return [NSNumber numberWithInt:NSOnState];
+        }
+        else
+        {
+            return [NSNumber numberWithInt:NSOffState];
+            //return [[NSImage alloc] init];
+        }
+    }
+    else if ([[tableColumn identifier] isEqualToString:@"favorite3"])
+    {
+        if (channel.favorite3)
+        {
+            //return [NSImage imageNamed:@"green-heart-icon-hi.png"];
+            return [NSNumber numberWithInt:NSOnState];
+        }
+        else
+        {
+            return [NSNumber numberWithInt:NSOffState];
+            //return [[NSImage alloc] init];
+        }
+    }
+    else if ([[tableColumn identifier] isEqualToString:@"favorite4"])
+    {
+        if (channel.favorite4)
         {
             //return [NSImage imageNamed:@"green-heart-icon-hi.png"];
             return [NSNumber numberWithInt:NSOnState];
@@ -292,9 +333,51 @@ NSString *MovedRowsType = @"MOVED_ROWS_TYPE";
         [channels insertObject:channel atIndex:[channel number]-1];
         [self renumber:self];
     }
-    else if ([[aTableColumn identifier] isEqualToString:@"favorite"])
+    else if ([[aTableColumn identifier] isEqualToString:@"favorite1"])
     {
-        channel.favorite = [anObject boolValue];
+        channel.favorite1 = [anObject boolValue];
+        if ([anObject boolValue])
+        {
+            _favoriteCount++;
+        }
+        else
+        {
+            _favoriteCount--;
+        }
+        [self updateFavoriteCheckbox];
+        [window setDocumentEdited:YES];
+    }
+    else if ([[aTableColumn identifier] isEqualToString:@"favorite2"])
+    {
+        channel.favorite2 = [anObject boolValue];
+        if ([anObject boolValue])
+        {
+            _favoriteCount++;
+        }
+        else
+        {
+            _favoriteCount--;
+        }
+        [self updateFavoriteCheckbox];
+        [window setDocumentEdited:YES];
+    }
+    else if ([[aTableColumn identifier] isEqualToString:@"favorite3"])
+    {
+        channel.favorite3 = [anObject boolValue];
+        if ([anObject boolValue])
+        {
+            _favoriteCount++;
+        }
+        else
+        {
+            _favoriteCount--;
+        }
+        [self updateFavoriteCheckbox];
+        [window setDocumentEdited:YES];
+    }
+    else if ([[aTableColumn identifier] isEqualToString:@"favorite4"])
+    {
+        channel.favorite4 = [anObject boolValue];
         if ([anObject boolValue])
         {
             _favoriteCount++;

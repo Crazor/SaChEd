@@ -17,11 +17,13 @@ NSDictionary *formats;
     formats = @{
         @"old": @{
             @"name": @45,
-            @"service": @9
+            @"service": @9,
+            @"favorite": @6
         },
         @"new": @{
             @"name": @65,
-            @"service": @15
+            @"service": @15,
+            @"favorite": @292
         }
     };
 }
@@ -30,6 +32,7 @@ NSDictionary *formats;
 {
     if (self = [super init])
     {
+        _format = format;
         _offsets = formats[format];
         _rawData = [data mutableCopy];
     }
@@ -73,26 +76,101 @@ NSDictionary *formats;
     [self updateChecksum];
 }
 
-- (BOOL)favorite
+- (BOOL)favorite1
 {
     unsigned const char *bytes = _rawData.bytes;
-    return (bytes[6] & 1) == 1;
+    return (bytes[[_offsets[@"favorite"] intValue]] & 1) == 1;
 }
 
-- (void)setFavorite:(BOOL)favorite
+- (BOOL)favorite2
+{
+    unsigned const char *bytes = _rawData.bytes;
+    return (bytes[[_offsets[@"favorite"] intValue]] & 2) == 2;
+}
+
+- (BOOL)favorite3
+{
+    unsigned const char *bytes = _rawData.bytes;
+    return (bytes[[_offsets[@"favorite"] intValue]] & 4) == 4;
+}
+
+- (BOOL)favorite4
+{
+    unsigned const char *bytes = _rawData.bytes;
+    return (bytes[[_offsets[@"favorite"] intValue]] & 8) == 8;
+}
+
+- (void)setFavorite1:(BOOL)favorite
 {
     unsigned char *bytes = _rawData.mutableBytes;
 
     if (favorite)
     {
-        bytes[6] |= 1;
+        bytes[[_offsets[@"favorite"] intValue]] |= 1;
     }
     else
     {
-        bytes[6] &= ~1;
+        bytes[[_offsets[@"favorite"] intValue]] &= ~1;
     }
 
     [self updateChecksum];
+}
+
+- (void)setFavorite2:(BOOL)favorite
+{
+    if ([_format isEqualToString:@"new"])
+    {
+        unsigned char *bytes = _rawData.mutableBytes;
+        
+        if (favorite)
+        {
+            bytes[[_offsets[@"favorite"] intValue]] |= 2;
+        }
+        else
+        {
+            bytes[[_offsets[@"favorite"] intValue]] &= ~2;
+        }
+        
+        [self updateChecksum];
+    }
+}
+
+- (void)setFavorite3:(BOOL)favorite
+{
+    if ([_format isEqualToString:@"new"])
+    {
+        unsigned char *bytes = _rawData.mutableBytes;
+        
+        if (favorite)
+        {
+            bytes[[_offsets[@"favorite"] intValue]] |= 4;
+        }
+        else
+        {
+            bytes[[_offsets[@"favorite"] intValue]] &= ~4;
+        }
+        
+        [self updateChecksum];
+    }
+}
+
+- (void)setFavorite4:(BOOL)favorite
+{
+    if ([_format isEqualToString:@"new"])
+    {
+        unsigned char *bytes = _rawData.mutableBytes;
+        
+        if (favorite)
+        {
+            bytes[[_offsets[@"favorite"] intValue]] |= 8;
+        }
+        else
+        {
+            bytes[[_offsets[@"favorite"] intValue]] &= ~8;
+        }
+        
+        [self updateChecksum];
+    }
 }
 
 - (NSString *)servicetype
